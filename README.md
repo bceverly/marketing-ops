@@ -23,3 +23,5 @@ This prototype will demonstrate:
 Prerequisites:
 
 1.  Install thrift and have the thrift executable in your path
+2.  Install Vagrant (http://vagrantup.com)
+3.  Install Virtualbox (http://virtualbox.org)

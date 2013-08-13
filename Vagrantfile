@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :web do |web|
     web.vm.box = "wheezy64"
+    web.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
     web.vm.hostname = "web.local"
     web.vm.synced_folder "www/", "/srv/website"
     web.vm.network :forwarded_port, guest: 80, host: 3280
@@ -18,6 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :db do |db|
     db.vm.box = "wheezy64"
+    db.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
     db.vm.hostname = "db.local"
     db.vm.network :private_network, ip: "192.168.56.101"
 
