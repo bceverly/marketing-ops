@@ -16,6 +16,7 @@ namespace ThriftBridgeServer
 
         public int AddTwoNumbers(int number1, int number2)
         {
+            Console.WriteLine("AddTwoNumbers(" + number1 + "," + number2 + ") called");
             return legacy_class.AddTwoNumbers(number1, number2);
         }
     }
@@ -31,7 +32,7 @@ namespace ThriftBridgeServer
                 TServerTransport serverTransport = new TServerSocket(9090);
 
                 TServer server = new TSimpleServer(processor, serverTransport);
-                Console.Write("Starting server...");
+                Console.WriteLine("Starting server...");
                 server.Serve();
             }
             catch (Exception x)
