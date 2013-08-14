@@ -14,6 +14,7 @@ sudo apt-get --quiet -y install postgresql-9.2 > /dev/null
 
 sudo -u postgres psql template1 << EOF
   ALTER USER postgres with encrypted password 'postgres';
+  CREATE DATABASE marketingops OWNER postgres;
 EOF
 
 sudo sh -c 'echo "host all all samenet md5" >> /etc/postgresql/9.2/main/pg_hba.conf'
