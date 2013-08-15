@@ -22,6 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     db.vm.box = "wheezy64"
     db.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
     db.vm.hostname = "db.local"
+    db.vm.synced_folder "db/", "/srv/db"
     db.vm.network :private_network, ip: "192.168.56.101"
 
     db.vm.provider "virtualbox" do |v|
