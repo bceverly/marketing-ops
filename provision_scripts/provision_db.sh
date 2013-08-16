@@ -22,4 +22,6 @@ sed "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" /etc/postgresql/
 sudo mv /tmp/postgresql.conf /etc/postgresql/9.2/main/postgresql.conf
 sudo service postgresql restart
 
+liquibase --driver=org.postgresql.Driver --changeLogFile=/srv/db/marketingops.xml --url="jdbc:postgresql://192.168.56.101/marketingops" --username=postgres --password=postgres --classpath=/usr/local/bin/postgresql-9.2-1003.jdbc4.jar update
+
 touch /tmp/provision_db

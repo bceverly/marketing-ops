@@ -17,6 +17,14 @@
     </column>
     <column name="notes" type="varchar(1000)" />
   </createTable>
+  <insert tableName="customer">
+    <column name="name" value="wal-mart" />
+    <column name="notes" value="version 8.0.14" />
+  </insert>
+  <insert tableName="customer">
+    <column name="name" value="verizon" />
+    <column name="notes" value="the wireless division" />
+  </insert>
   <rollback>
     <dropTable tableName="customer" />
   </rollback>
