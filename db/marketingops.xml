@@ -30,4 +30,27 @@
   </rollback>
 </changeSet>
 
+<changeSet id="2" author="bceverly">
+  <createTable tableName="product">
+    <column name="id" type="int" autoIncrement="true">
+      <constraints primaryKey="true" nullable="false" />
+    </column>
+    <column name="name" type="varchar(255)">
+      <constraints nullable="false" />
+    </column>
+    <column name="notes" type="varchar(1000)"/>
+  </createTable>
+  <insert tableName="product">
+    <column name="name" value="laser pointer" />
+    <column name="notes" value="this one is red" />
+  </insert>
+  <insert tableName="product>
+    <column name="name" value="napkins" />
+    <column name="notes" value="qty. 500" />
+  </insert>
+  <rollback>
+    <dropTable tableName="product" />
+  </rollback>
+</changeSet>
+
 </databaseChangeLog>
