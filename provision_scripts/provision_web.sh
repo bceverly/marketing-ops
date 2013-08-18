@@ -9,7 +9,7 @@ then
 fi
 
 echo '192.168.56.101 db db.local' >> /etc/hosts
-#sudo forever start -a /srv/api/test.js
+sudo forever start -a /srv/api/main.js
 
 # Set up the default apache2 site
 sudo echo '<VirtualHost *:80>' > ${DEFAULT_SITE}

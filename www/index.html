@@ -2,10 +2,44 @@
 <html>
 <head>
 <title>Marketing Operations</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
 <body>
-Hello world!
+<p>Welcome to the Marketing Operations proof of concept prototype.</p>
+<p>Press one of the following buttons to test elements of the architecture:</p>
+<table border='1'>
+<tr>
+<td><input type='button' id='nodeNative' value='Node Native' /></td>
+<td><input type='button' id='nodeSwift' value='Node Swift' /></td>
+</tr>
+<tr>
+<td><div id='nodeNativeResults'><p>Results of call to route /api/customer/1:</p></div></td>
+<td><div id='nodeSwiftResults'><p>Results of call to route /api/product/1:</p></div></td>
+</tr>
+</table>
+
+<script type='text/javascript'>
+  $('#nodeNative').click(function() {
+    $('#nodeNativeResults').html('Testing...');
+    $.ajax({
+      url: 'http://192.168.56.100:3456/api/customer/1',
+      dataType: 'jsonp',
+      cache: false,
+      timeout: 5000,
+      success: function(data) {
+        var results = '<p>Results of call to route /api/customer/1:<br />';
+        results += '&nbsp;&nbsp;id = ' + data.id + '<br />';
+        results += '&nbsp;&nbsp;Name = ' + data.name + '<br />';
+        results += '&nbsp;&nbsp;Notes = ' + data.notes + '</p>';
+        $('#nodeNativeResults').html(results);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        $('#nodeNativeResults').html('Error calling NodeNative REST route...');
+      }
+    });
+  });
+</script>
 </body>
 
 </html>
