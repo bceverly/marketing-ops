@@ -44,7 +44,7 @@
     <column name="name" value="laser pointer" />
     <column name="notes" value="this one is red" />
   </insert>
-  <insert tableName="product>
+  <insert tableName="product">
     <column name="name" value="napkins" />
     <column name="notes" value="qty. 500" />
   </insert>
