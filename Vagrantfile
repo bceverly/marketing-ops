@@ -31,4 +31,27 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     db.vm.provision :shell, :path => "provision_scripts/provision_db.sh"
   end
+
+  config.vm.define :win do |win|
+    win.vm.box = "winserv2008r2"
+#    win.vm.box_url = ""
+    win.vm.hostname = "win.local"
+    win.vm.network :private_network, ip: "192.168.56.129"
+
+    win.vm.provider "virtualbox" do |v|
+      v.customize "pre-boot",
+        ["sharedfolder", "add", :id,
+         "--name", "Vagrant", "--hostpath", "/Users/bceverly/marketing-ops/WinNet"
+        ]
+#      v.customize "post-boot", 
+#        ["guestcontrol", :id, 
+#         "exec", 
+#         "--image", "c:\\windows\\system32\\netsh.exe", 
+#         "--username", "vagrant", 
+#         "--password", "vagrant", 
+#         "--wait-exit", 
+#         "interface", "ip set address name=\"Local Area Connection 2\" static 192.168.56.102 255.255.255.0 192.168.56.1"
+#        ]
+    end
+  end
 end
