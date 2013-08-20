@@ -10,14 +10,20 @@ using LegacyDLL;
 
 namespace ThriftBridgeServer
 {
-    class LegacyClassHandler : LegacyClassService.Iface
+    class ProductServiceHandler : ProductService.Iface
     {
-        LegacyClass legacy_class = new LegacyClass();
+        ProductAPI legacy_class = new ProductAPI();
 
-        public int AddTwoNumbers(int number1, int number2)
+        public Product getProductById(int id)
         {
-            Console.WriteLine("AddTwoNumbers(" + number1 + "," + number2 + ") called");
-            return legacy_class.AddTwoNumbers(number1, number2);
+            Console.WriteLine("GetProductById(" + id + ") called...");
+            LegacyDLL.Product legacyResult = legacy_class.getProductById(id);
+
+            Product retVal = new Product();
+            retVal.Id = legacyResult.Id;
+            retVal.Name = legacyResult.Name;
+            retVal.Comments = legacyResult.Comments;
+            return retVal;
         }
     }
 
@@ -27,8 +33,8 @@ namespace ThriftBridgeServer
         {
             try
             {
-                LegacyClassHandler handler = new LegacyClassHandler();
-                LegacyClassService.Processor processor = new LegacyClassService.Processor(handler);
+                ProductServiceHandler handler = new ProductServiceHandler();
+                ProductService.Processor processor = new ProductService.Processor(handler);
                 TServerTransport serverTransport = new TServerSocket(9090);
 
                 TServer server = new TSimpleServer(processor, serverTransport);

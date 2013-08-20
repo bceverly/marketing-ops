@@ -1,4 +1,11 @@
-service LegacyClassService
+struct Product
 {
-  i32 AddTwoNumbers(1: i32 number1, 2: i32 number2)
+  1: i32 id,
+  2: string name,
+  3: string comments,
+}
+
+service ProductService
+{
+  Product GetProductById(1: i32 id);
 }

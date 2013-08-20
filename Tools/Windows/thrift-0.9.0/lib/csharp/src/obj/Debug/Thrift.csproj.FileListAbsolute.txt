@@ -1,0 +1,4 @@
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\lib\csharp\src\bin\Debug\Thrift.dll
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\lib\csharp\src\bin\Debug\Thrift.pdb
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\lib\csharp\src\obj\Debug\Thrift.dll
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\lib\csharp\src\obj\Debug\Thrift.pdb

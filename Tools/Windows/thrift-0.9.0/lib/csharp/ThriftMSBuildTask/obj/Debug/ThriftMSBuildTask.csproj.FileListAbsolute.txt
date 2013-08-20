@@ -1,0 +1,4 @@
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\lib\csharp\ThriftMSBuildTask\bin\Debug\ThriftMSBuildTask.dll
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\lib\csharp\ThriftMSBuildTask\bin\Debug\ThriftMSBuildTask.pdb
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\lib\csharp\ThriftMSBuildTask\obj\Debug\ThriftMSBuildTask.dll
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\lib\csharp\ThriftMSBuildTask\obj\Debug\ThriftMSBuildTask.pdb

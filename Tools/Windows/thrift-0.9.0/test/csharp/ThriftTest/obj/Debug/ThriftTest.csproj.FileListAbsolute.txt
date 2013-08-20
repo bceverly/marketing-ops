@@ -1,0 +1,1 @@
+C:\Users\Bryan Everly\Downloads\thrift-0.9.0\test\csharp\ThriftTest\obj\Debug\ThriftTest.csprojResolveAssemblyReference.cache
