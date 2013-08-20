@@ -39,6 +39,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     win.vm.network :private_network, ip: "192.168.56.129"
 
     win.vm.provider "virtualbox" do |v|
+      v.gui = true
       v.customize "pre-boot",
         ["sharedfolder", "add", :id,
          "--name", "Vagrant", "--hostpath", "/Users/bceverly/marketing-ops/WinNet"
