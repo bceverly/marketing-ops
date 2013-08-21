@@ -11,11 +11,11 @@
 <table border='1'>
 <tr>
 <td><input type='button' id='nodeNative' value='Node Native' /></td>
-<td><input type='button' id='nodeSwift' value='Node Swift' /></td>
+<td><input type='button' id='nodeThrift' value='Node Thrift' /></td>
 </tr>
 <tr>
 <td><div id='nodeNativeResults'><p>Results of call to route /api/customer/1:</p></div></td>
-<td><div id='nodeSwiftResults'><p>Results of call to route /api/product/1:</p></div></td>
+<td><div id='nodeThriftResults'><p>Results of call to route /api/product/1:</p></div></td>
 </tr>
 </table>
 
@@ -36,6 +36,26 @@
       },
       error: function(jqXHR, textStatus, errorThrown) {
         $('#nodeNativeResults').html('Error calling NodeNative REST route...');
+      }
+    });
+  });
+
+  $('#nodeThrift').click(function() {
+    $('#nodeThriftResults').html('Testing...');
+    $.ajax({
+      url: 'http://192.168.56.100:3456/api/product/1',
+      dataType: 'jsonp',
+      cache: false,
+      timeout: 5000,
+      success: function(data) {
+        var results = '<p>Results of call to route /api/product/1:<br />';
+        results += '&nbsp;&nbsp;id = ' + data.id + '<br />';
+        results += '&nbsp;&nbsp;Name = ' + data.name + '<br />';
+        results += '&nbsp;&nbsp;Notes = ' + data.notes + '</p>';
+        $('#nodeThriftResults').html(results);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        $('#nodeThriftResults').html('Error calling NodeThrift REST route...');
       }
     });
   });
