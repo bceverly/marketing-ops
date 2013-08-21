@@ -1,0 +1,526 @@
+8/21/2013 9:50:27 AM	4012	Normal	Set NpgsqlEventLog.EchoMessages = True
+8/21/2013 9:50:27 AM	4012	Debug	Entering NpgsqlConnection.NpgsqlConnection(NpgsqlConnection())
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: HOST = 192.168.56.101
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: PORT = 5432
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: PROTOCOL = 3
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: DATABASE = marketingops
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: USER ID = postgres
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: PASSWORD = postgres
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: SSL = False
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: SSLMODE = Disable
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: TIMEOUT = 15
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: SEARCHPATH = 
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: POOLING = True
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: CONNECTIONLIFETIME = 15
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: MINPOOLSIZE = 1
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: MAXPOOLSIZE = 20
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: SYNCNOTIFICATION = False
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: COMMANDTIMEOUT = 20
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: ENLIST = False
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: PRELOADREADER = False
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: USEEXTENDEDTYPES = False
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: INTEGRATED SECURITY = False
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: COMPATIBLE = 2.0.12.0
+8/21/2013 9:50:28 AM	4012	Debug	ConnectionString Option: APPLICATIONNAME = 
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlConnection.Open()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlClosedState.Instance
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlClosedState.Instance
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlClosedState.Open()
+8/21/2013 9:50:28 AM	4012	Debug	Attempt to connect to '192.168.56.101'.
+8/21/2013 9:50:28 AM	4012	Normal	Connected to: 192.168.56.101:5432.
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlStartupPacket.NpgsqlStartupPacket()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlStartupPacket.WriteToStream()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlStartupPacket.WriteToStream_Ver_3()
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.WriteString()
+8/21/2013 9:50:28 AM	4012	Debug	String written: user.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.WriteString()
+8/21/2013 9:50:28 AM	4012	Debug	String written: postgres.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.WriteString()
+8/21/2013 9:50:28 AM	4012	Debug	String written: database.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.WriteString()
+8/21/2013 9:50:28 AM	4012	Debug	String written: marketingops.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.WriteString()
+8/21/2013 9:50:28 AM	4012	Debug	String written: DateStyle.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.WriteString()
+8/21/2013 9:50:28 AM	4012	Debug	String written: ISO.
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlState.ProcessBackendResponses()
+8/21/2013 9:50:28 AM	4012	Debug	AuthenticationRequest message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Server requested MD5 password authentication.
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlStartupState.Authenticate()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlPasswordPacket.NpgsqlPasswordPacket()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlPasswordPacket.WriteToStream()
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.WriteBytes()
+8/21/2013 9:50:28 AM	4012	Debug	Unable to find resource string Log_BytesWritten for class PGUtil
+8/21/2013 9:50:28 AM	4012	Debug	AuthenticationRequest message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	AuthenticationOK received.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: application_name.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: .
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = application_name, Value = 
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: client_encoding.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: UTF8.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = client_encoding, Value = UTF8
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: DateStyle.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: ISO, MDY.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = DateStyle, Value = ISO, MDY
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: integer_datetimes.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: on.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = integer_datetimes, Value = on
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: IntervalStyle.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: postgres.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = IntervalStyle, Value = postgres
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: is_superuser.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: on.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = is_superuser, Value = on
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: server_encoding.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: UTF8.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = server_encoding, Value = UTF8
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: server_version.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: 9.2.4.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = server_version, Value = 9.2.4
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: session_authorization.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: postgres.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = session_authorization, Value = postgres
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: standard_conforming_strings.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: on.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = standard_conforming_strings, Value = on
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: TimeZone.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: localtime.
+8/21/2013 9:50:28 AM	4012	Debug	ParameterStatus message from Server: Param = TimeZone, Value = localtime
+8/21/2013 9:50:28 AM	4012	Debug	BackendKeyData message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	ReadyForQuery message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlParameterCollection.NpgsqlParameterCollection()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.NpgsqlCommand()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.CheckConnectionState()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlReadyState.QueryEnum()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.GetCommandText()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.GetClearCommandText()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlParameterCollection.Count
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String written: SET ssl_renegotiation_limit=0.
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlCommand.Connection
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlState.ProcessBackendResponses()
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: SET.
+8/21/2013 9:50:28 AM	4012	Debug	ReadyForQuery message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering ForwardsOnlyDataReader.Dispose()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlParameterCollection.NpgsqlParameterCollection()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.NpgsqlCommand()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.CheckConnectionState()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlReadyState.QueryEnum()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.GetCommandText()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.GetClearCommandText()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlParameterCollection.Count
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String written: SET extra_float_digits=2;SET extra_float_digits=3;.
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlCommand.Connection
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlState.ProcessBackendResponses()
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: SET.
+8/21/2013 9:50:28 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String read: SET.
+8/21/2013 9:50:28 AM	4012	Debug	ReadyForQuery message received from server.
+8/21/2013 9:50:28 AM	4012	Debug	Entering ForwardsOnlyDataReader.Dispose()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlTypesHelper.LoadTypesMapping()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlParameterCollection.NpgsqlParameterCollection()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.NpgsqlCommand()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.CheckConnectionState()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlReadyState.QueryEnum()
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.GetCommandText()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	Entering NpgsqlCommand.GetClearCommandText()
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlParameterCollection.Count
+8/21/2013 9:50:28 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:28 AM	4012	Debug	String written: SELECT typname, oid FROM pg_type WHERE typname IN ('oidvector', '_oidvector', 'unknown', '_unknown', 'refcursor', '_refcursor', 'char', '_char', 'bpchar', '_bpchar', 'varchar', '_varchar', 'text', '_text', 'name', '_name', 'bytea', '_bytea', 'bit', '_bit', 'bool', '_bool', 'int2', '_int2', 'int4', '_int4', 'int8', '_int8', 'oid', '_oid', 'float4', '_float4', 'float8', '_float8', 'numeric', '_numeric', 'inet', '_inet', 'macaddr', '_macaddr', 'money', '_money', 'point', '_point', 'lseg', '_lseg', 'path', '_path', 'box', '_box', 'circle', '_circle', 'polygon', '_polygon', 'uuid', '_uuid', 'xml', '_xml', 'interval', '_interval', 'date', '_date', 'time', '_time', 'timetz', '_timetz', 'timestamp', '_timestamp', 'abstime', '_abstime', 'timestamptz', '_timestamptz').
+8/21/2013 9:50:29 AM	4012	Debug	Get NpgsqlCommand.Connection
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlState.ProcessBackendResponses()
+8/21/2013 9:50:29 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:29 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:29 AM	4012	Debug	String read: typname.
+8/21/2013 9:50:29 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:29 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:29 AM	4012	Debug	String read: oid.
+8/21/2013 9:50:29 AM	4012	Debug	Get NpgsqlCommand.Parameters
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlParameterCollection.GetEnumerator()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:29 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:29 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:30 AM	4012	Debug	String read: SELECT 71.
+8/21/2013 9:50:30 AM	4012	Debug	ReadyForQuery message received from server.
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.Dispose()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlParameterCollection.NpgsqlParameterCollection()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlCommand.NpgsqlCommand()
+8/21/2013 9:50:30 AM	4012	Debug	Set NpgsqlCommand.Transaction = 
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlCommand.Connection
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlCommand.Connection
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlCommand.ExecuteReader()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlCommand.ExecuteReader(Default)
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlCommand.CheckConnectionState()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlReadyState.QueryEnum()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlCommand.GetCommandText()
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlCommand.GetClearCommandText()
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlParameterCollection.Count
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:30 AM	4012	Debug	String written: select * from product where id=1.
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlCommand.Connection
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlState.ProcessBackendResponses()
+8/21/2013 9:50:30 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:30 AM	4012	Debug	String read: id.
+8/21/2013 9:50:30 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:30 AM	4012	Debug	String read: name.
+8/21/2013 9:50:30 AM	4012	Debug	Entering PGUtil.ReadString()
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlEventLog.LogLevel
+8/21/2013 9:50:30 AM	4012	Debug	String read: notes.
+8/21/2013 9:50:30 AM	4012	Debug	Get NpgsqlCommand.Parameters
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlParameterCollection.GetEnumerator()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()
+8/21/2013 9:50:30 AM	4012	Debug	Entering ForwardsOnlyDataReader.GetValue()
+8/21/2013 9:50:30 AM	4012	Debug	Entering NpgsqlTypesHelper.ConvertBackendStringToSystemType()

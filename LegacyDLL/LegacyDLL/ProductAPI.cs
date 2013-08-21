@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Npgsql;
+using Npgsql;
 
 namespace LegacyDLL
 {
@@ -12,12 +12,12 @@ namespace LegacyDLL
         public Product getProductById(int id)
         {
             Console.WriteLine("Calling getProductById");
-            Product x = new Product();
+/*            Product x = new Product();
             x.Id = 42;
             x.Name = "Hi";
             x.Notes = "World";
-            return x;
-/*            try
+            return x;*/
+            try
             {
                 Console.WriteLine("Setting up logging...");
                 NpgsqlEventLog.Level = LogLevel.Debug;
@@ -51,7 +51,7 @@ namespace LegacyDLL
             }
 
             Console.WriteLine("Failed somehow...");
-            return null;*/
+            return null;
         }
     }
 }
