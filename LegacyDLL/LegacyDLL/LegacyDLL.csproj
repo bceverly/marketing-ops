@@ -30,17 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Drivers\Npgsql2.0.12.0-bin-ms.net4.0\Mono.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Npgsql, Version=2.0.12.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Drivers\Npgsql2.0.12.0-bin-ms.net4.0\Npgsql.dll</HintPath>
-    </Reference>
-    <Reference Include="policy.2.0.Npgsql">
-      <HintPath>..\..\Drivers\Npgsql2.0.12.0-bin-ms.net4.0\policy.2.0.Npgsql.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

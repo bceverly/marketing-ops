@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Npgsql;
+//using Npgsql;
 
 namespace LegacyDLL
 {
@@ -17,7 +17,7 @@ namespace LegacyDLL
             x.Name = "Hi";
             x.Notes = "World";
             return x;
-            try
+/*            try
             {
                 Console.WriteLine("Setting up logging...");
                 NpgsqlEventLog.Level = LogLevel.Debug;
@@ -51,7 +51,7 @@ namespace LegacyDLL
             }
 
             Console.WriteLine("Failed somehow...");
-            return null;
+            return null;*/
         }
     }
 }
