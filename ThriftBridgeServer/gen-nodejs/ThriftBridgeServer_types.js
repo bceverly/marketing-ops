@@ -8,7 +8,7 @@ var ttypes = module.exports = {};
 Product = module.exports.Product = function(args) {
   this.id = null;
   this.name = null;
-  this.comments = null;
+  this.notes = null;
   if (args) {
     if (args.id !== undefined) {
       this.id = args.id;
@@ -16,8 +16,8 @@ Product = module.exports.Product = function(args) {
     if (args.name !== undefined) {
       this.name = args.name;
     }
-    if (args.comments !== undefined) {
-      this.comments = args.comments;
+    if (args.notes !== undefined) {
+      this.notes = args.notes;
     }
   }
 };
@@ -51,7 +51,7 @@ Product.prototype.read = function(input) {
       break;
       case 3:
       if (ftype == Thrift.Type.STRING) {
-        this.comments = input.readString();
+        this.notes = input.readString();
       } else {
         input.skip(ftype);
       }
@@ -77,9 +77,9 @@ Product.prototype.write = function(output) {
     output.writeString(this.name);
     output.writeFieldEnd();
   }
-  if (this.comments !== null && this.comments !== undefined) {
-    output.writeFieldBegin('comments', Thrift.Type.STRING, 3);
-    output.writeString(this.comments);
+  if (this.notes !== null && this.notes !== undefined) {
+    output.writeFieldBegin('notes', Thrift.Type.STRING, 3);
+    output.writeString(this.notes);
     output.writeFieldEnd();
   }
   output.writeFieldStop();

@@ -14,15 +14,15 @@ namespace ThriftBridgeServer
     {
         ProductAPI legacy_class = new ProductAPI();
 
-        public Product getProductById(int id)
+        public Product GetProductById(int id)
         {
-            Console.WriteLine("GetProductById(" + id + ") called...");
-            LegacyDLL.Product legacyResult = legacy_class.getProductById(id);
-
+            Console.WriteLine("getProductById(" + id + ") called");
+            LegacyDLL.Product thriftReturn = legacy_class.getProductById(id);
             Product retVal = new Product();
-            retVal.Id = legacyResult.Id;
-            retVal.Name = legacyResult.Name;
-            retVal.Comments = legacyResult.Comments;
+            retVal.Id = thriftReturn.Id;
+            retVal.Name = thriftReturn.Name;
+            retVal.Notes = thriftReturn.Notes;
+
             return retVal;
         }
     }

@@ -23,7 +23,7 @@ public partial class Product : TBase
 {
   private int _id;
   private string _name;
-  private string _comments;
+  private string _notes;
 
   public int Id
   {
@@ -51,16 +51,16 @@ public partial class Product : TBase
     }
   }
 
-  public string Comments
+  public string Notes
   {
     get
     {
-      return _comments;
+      return _notes;
     }
     set
     {
-      __isset.comments = true;
-      this._comments = value;
+      __isset.notes = true;
+      this._notes = value;
     }
   }
 
@@ -72,7 +72,7 @@ public partial class Product : TBase
   public struct Isset {
     public bool id;
     public bool name;
-    public bool comments;
+    public bool notes;
   }
 
   public Product() {
@@ -106,7 +106,7 @@ public partial class Product : TBase
           break;
         case 3:
           if (field.Type == TType.String) {
-            Comments = iprot.ReadString();
+            Notes = iprot.ReadString();
           } else { 
             TProtocolUtil.Skip(iprot, field.Type);
           }
@@ -140,12 +140,12 @@ public partial class Product : TBase
       oprot.WriteString(Name);
       oprot.WriteFieldEnd();
     }
-    if (Comments != null && __isset.comments) {
-      field.Name = "comments";
+    if (Notes != null && __isset.notes) {
+      field.Name = "notes";
       field.Type = TType.String;
       field.ID = 3;
       oprot.WriteFieldBegin(field);
-      oprot.WriteString(Comments);
+      oprot.WriteString(Notes);
       oprot.WriteFieldEnd();
     }
     oprot.WriteFieldStop();
@@ -158,8 +158,8 @@ public partial class Product : TBase
     sb.Append(Id);
     sb.Append(",Name: ");
     sb.Append(Name);
-    sb.Append(",Comments: ");
-    sb.Append(Comments);
+    sb.Append(",Notes: ");
+    sb.Append(Notes);
     sb.Append(")");
     return sb.ToString();
   }

@@ -34,7 +34,7 @@ namespace LegacyDLL
                 _name = value;
             }
         }
-        public string Comments
+        public string Notes
         {
             get
             {

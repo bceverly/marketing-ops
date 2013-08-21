@@ -35,6 +35,9 @@
     <Reference Include="LegacyDLL">
       <HintPath>..\..\LegacyDLL\LegacyDLL\bin\Debug\LegacyDLL.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\Drivers\Npgsql2.0.12.0-bin-ms.net4.0\Mono.Security.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

@@ -2,7 +2,7 @@ struct Product
 {
   1: i32 id,
   2: string name,
-  3: string comments,
+  3: string notes,
 }
 
 service ProductService

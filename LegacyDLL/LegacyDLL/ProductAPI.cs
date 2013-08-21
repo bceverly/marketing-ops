@@ -11,19 +11,27 @@ namespace LegacyDLL
     {
         public Product getProductById(int id)
         {
-            NpgsqlConnection conn = new NpgsqlConnection("Server=192.168.56.101;Port=5432;User Id=postgres;Password=postgres;Database=marketingops;");
-            conn.Open();
-
-            NpgsqlCommand command = new NpgsqlCommand("select * from product where id=" + id.ToString(), conn);
-            NpgsqlDataReader dr = command.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                Product returnVal = new Product();
-                returnVal.Id = (int)dr["id"];
-                returnVal.Name = (string)dr["name"];
-                returnVal.Comments = (string)dr["comments"];
+                NpgsqlConnection conn = new NpgsqlConnection("Server=192.168.56.101;Port=5432;User Id=postgres;Password=postgres;Database=marketingops;");
+                conn.Open();
 
-                return returnVal;
+                NpgsqlCommand command = new NpgsqlCommand("select * from product where id=" + id.ToString(), conn);
+                NpgsqlDataReader dr = command.ExecuteReader();
+                if (dr.Read())
+                {
+                    Product returnVal = new Product();
+                    returnVal.Id = (int)dr["id"];
+                    returnVal.Name = (string)dr["name"];
+                    returnVal.Notes = (string)dr["notes"];
+
+                    return returnVal;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return null;
             }
 
             return null;

@@ -15,7 +15,10 @@ client.GetProductById(1, function(err, response) {
     console.error(err);
 	connection.end();
   } else {
-    console.log('GetProductById(1) returned:' + response);
+    console.log('GetProductById(1) returned:');
+	console.log('  id = ' + response.id);
+	console.log('  name = ' + response.name);
+	console.log('  notes = ' + response.notes);
 	connection.end();
   }
 });

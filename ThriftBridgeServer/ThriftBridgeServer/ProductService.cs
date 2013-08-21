@@ -17,7 +17,7 @@ using Thrift.Transport;
 
 public partial class ProductService {
   public interface Iface {
-    Product getProductById(int id);
+    Product GetProductById(int id);
     #if SILVERLIGHT
     IAsyncResult Begin_GetProductById(AsyncCallback callback, object state, int id);
     Product End_GetProductById(IAsyncResult asyncResult);
@@ -64,7 +64,7 @@ public partial class ProductService {
 
     #endif
 
-    public Product getProductById(int id)
+    public Product GetProductById(int id)
     {
       #if !SILVERLIGHT
       send_GetProductById(id);
@@ -155,7 +155,7 @@ public partial class ProductService {
       args.Read(iprot);
       iprot.ReadMessageEnd();
       GetProductById_result result = new GetProductById_result();
-      result.Success = iface_.getProductById(args.Id);
+      result.Success = iface_.GetProductById(args.Id);
       oprot.WriteMessageBegin(new TMessage("GetProductById", TMessageType.Reply, seqid)); 
       result.Write(oprot);
       oprot.WriteMessageEnd();
