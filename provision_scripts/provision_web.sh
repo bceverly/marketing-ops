@@ -3,7 +3,7 @@
 LOCKFILE=/tmp/provision_web
 DEFAULT_SITE=/etc/apache2/sites-available/default
 
-if [ -e ${LOCKFILE} ];
+if [ -f ${LOCKFILE} ];
 then
   exit 0
 fi
@@ -28,4 +28,4 @@ sudo echo '</VirtualHost>' >> ${DEFAULT_SITE}
 
 sudo apachectl restart
 
-touch /tmp/provision_web
+touch ${LOCKFILE}

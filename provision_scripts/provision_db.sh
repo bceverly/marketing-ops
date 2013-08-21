@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOCKFILE=/tmp/provision_db
-if [ -e ${LOCKFILE} ];
+if [ -f ${LOCKFILE} ];
 then
   exit 0
 fi
@@ -24,4 +24,4 @@ sudo service postgresql restart
 
 liquibase --driver=org.postgresql.Driver --changeLogFile=/srv/db/marketingops.xml --url="jdbc:postgresql://192.168.56.101/marketingops" --username=postgres --password=postgres --classpath=/usr/local/bin/postgresql-9.2-1003.jdbc4.jar update
 
-touch /tmp/provision_db
+touch ${LOCKFILE}
