@@ -44,6 +44,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ["sharedfolder", "add", :id,
          "--name", "Vagrant", "--hostpath", "/Users/bceverly/marketing-ops/WinNet"
         ]
+       v.customize "pre-boot",
+        ["sharedfolder", "add", :id,
+         "--name", "ThriftBridgeServer", "--hostpath", "/Users/bceverly/marketing-ops/ThriftBridgeServer"
+        ]
 #      v.customize "post-boot", 
 #        ["guestcontrol", :id, 
 #         "exec", 
