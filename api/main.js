@@ -54,12 +54,16 @@ app.get('/api/product/:id', function(req, res) {
 			var url_parts = url.parse(req.url, true);
 			var query = url_parts.query;
 
-			var response = JSON.stringify(result);
-			var response = JSON.stringify(result.rows[0]);
-			response = query.callback + '(' + response + ');';
-			console.log('response = ' + response);
+			console.log('response from thrift call: ');
+			console.log('  response.id = ' + response.id);
+			console.log('  response.name = ' + response.name);
+			console.log('  response.notes = ' + response.notes);
+			
+			var finalResponse = JSON.stringify(response);
+			finalResponse = query.callback + '(' + finalResponse + ');';
+			console.log('finalResponse = ' + finalResponse);
 			connection.end();
-			res.end(response);
+			res.end(finalResponse);
 		}
 	  }
 	});
