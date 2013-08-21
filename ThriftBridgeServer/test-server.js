@@ -3,7 +3,7 @@ var ttransport = require('thrift/lib/thrift/transport');
 var service = require('./gen-nodejs/ProductService');
 var types = require('./gen-nodejs/ThriftBridgeServer_types');
 
-var connection = thrift.createConnection('localhost', 9090, {transport: ttransport.TBufferedTransport});
+var connection = thrift.createConnection('192.168.56.102', 9090, {transport: ttransport.TBufferedTransport});
 var client = thrift.createClient(service, connection);
 
 connection.on('error', function(err) {
