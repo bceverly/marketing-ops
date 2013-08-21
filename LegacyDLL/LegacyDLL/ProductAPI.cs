@@ -11,6 +11,7 @@ namespace LegacyDLL
     {
         public Product getProductById(int id)
         {
+            Console.WriteLine("Calling getProductById");
             try
             {
                 Console.WriteLine("Getting ready to connect to DB");
