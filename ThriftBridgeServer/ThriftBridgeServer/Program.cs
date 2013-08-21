@@ -20,7 +20,9 @@ namespace ThriftBridgeServer
 
             try
             {
+                Console.WriteLine("Calling into legacy class...");
                 LegacyDLL.Product thriftReturn = legacy_class.getProductById(id);
+                Console.WriteLine("Returned from call...");
                 Product retVal = new Product();
                 retVal.Id = thriftReturn.Id;
                 retVal.Name = thriftReturn.Name;

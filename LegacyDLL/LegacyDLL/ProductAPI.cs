@@ -12,6 +12,11 @@ namespace LegacyDLL
         public Product getProductById(int id)
         {
             Console.WriteLine("Calling getProductById");
+            Product x = new Product();
+            x.Id = 42;
+            x.Name = "Hi";
+            x.Notes = "World";
+            return x;
             try
             {
                 Console.WriteLine("Setting up logging...");
