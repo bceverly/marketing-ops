@@ -1,0 +1,6 @@
+C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\LegacyDLL\LegacyDLL\bin\Debug\LegacyDLL.dll
+C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\LegacyDLL\LegacyDLL\bin\Debug\LegacyDLL.pdb
+C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\LegacyDLL\LegacyDLL\obj\Debug\LegacyDLL.csprojResolveAssemblyReference.cache
+C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\LegacyDLL\LegacyDLL\obj\Debug\LegacyDLL.dll
+C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\LegacyDLL\LegacyDLL\obj\Debug\LegacyDLL.pdb
+C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\LegacyDLL\LegacyDLL\bin\Debug\Mono.Security.dll
