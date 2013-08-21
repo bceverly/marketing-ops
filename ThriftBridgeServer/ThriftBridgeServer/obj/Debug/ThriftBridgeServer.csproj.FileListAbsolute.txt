@@ -9,3 +9,5 @@ C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\Thrift
 C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\ThriftBridgeServer\ThriftBridgeServer\obj\Debug\ThriftBridgeServer.exe
 C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\ThriftBridgeServer\ThriftBridgeServer\obj\Debug\ThriftBridgeServer.pdb
 C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\ThriftBridgeServer\ThriftBridgeServer\bin\Debug\Mono.Security.dll
+C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\ThriftBridgeServer\ThriftBridgeServer\bin\Debug\policy.2.0.Npgsql.dll
+C:\Users\Bryan Everly\Documents\Visual Studio 2012\Projects\marketing-ops\ThriftBridgeServer\ThriftBridgeServer\bin\Debug\policy.2.0.Npgsql.config

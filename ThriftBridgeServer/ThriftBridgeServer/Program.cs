@@ -17,13 +17,23 @@ namespace ThriftBridgeServer
         public Product GetProductById(int id)
         {
             Console.WriteLine("getProductById(" + id + ") called");
-            LegacyDLL.Product thriftReturn = legacy_class.getProductById(id);
-            Product retVal = new Product();
-            retVal.Id = thriftReturn.Id;
-            retVal.Name = thriftReturn.Name;
-            retVal.Notes = thriftReturn.Notes;
 
-            return retVal;
+            try
+            {
+                LegacyDLL.Product thriftReturn = legacy_class.getProductById(id);
+                Product retVal = new Product();
+                retVal.Id = thriftReturn.Id;
+                retVal.Name = thriftReturn.Name;
+                retVal.Notes = thriftReturn.Notes;
+
+                return retVal;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
+
+            return null;
         }
     }
 
