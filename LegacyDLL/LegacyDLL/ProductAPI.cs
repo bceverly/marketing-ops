@@ -14,6 +14,11 @@ namespace LegacyDLL
             Console.WriteLine("Calling getProductById");
             try
             {
+                Console.WriteLine("Setting up logging...");
+                NpgsqlEventLog.Level = LogLevel.Debug;
+                NpgsqlEventLog.LogName = "NpgsqlTests.LogFile";
+                NpgsqlEventLog.EchoMessages = true;
+
                 Console.WriteLine("Getting ready to connect to DB");
                 NpgsqlConnection conn = new NpgsqlConnection("Server=192.168.56.101;Port=5432;User Id=postgres;Password=postgres;Database=marketingops;");
                 Console.WriteLine("DB Connected");
