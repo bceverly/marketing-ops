@@ -29,7 +29,7 @@
   $('#enableCustomization').click(function() {
     $('#enableCustomizationResults').html('Toggling...');
     $.ajax({
-      url: 'http://192.168.56.100:3456/api/customize/1',
+      url: 'http://192.168.56.103:3456/api/customize/1',
       dataType: 'jsonp',
       cache: false,
       timeout: 5000,
@@ -47,7 +47,7 @@
   $('#disableCustomization').click(function() {
     $('#disableCustomizationResults').html('Toggling...');
     $.ajax({
-      url: 'http://192.168.56.100:3456/api/customize/0',
+      url: 'http://192.168.56.103:3456/api/customize/0',
       dataType: 'jsonp',
       cache: false,
       timeout: 5000,
@@ -65,7 +65,7 @@
   $('#nodeNative').click(function() {
     $('#nodeNativeResults').html('Testing...');
     $.ajax({
-      url: 'http://192.168.56.100:3456/api/customer/1',
+      url: 'http://192.168.56.103:3456/api/customer/1',
       dataType: 'jsonp',
       cache: false,
       timeout: 5000,
@@ -85,7 +85,7 @@
   $('#nodeThrift').click(function() {
     $('#nodeThriftResults').html('Testing...');
     $.ajax({
-      url: 'http://192.168.56.100:3456/api/product/1',
+      url: 'http://192.168.56.103:3456/api/product/1',
       dataType: 'jsonp',
       cache: false,
       timeout: 5000,
