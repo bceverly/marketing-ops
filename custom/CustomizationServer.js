@@ -22,14 +22,41 @@ var server = thrift.createServer(service, {
 			retVal.transformedArguments[args[i]] = arguments.arguments[args[i]];
 		}
 		
-		// Perform custom action
+		// Perform custom actions
 		switch(moduleName) {
-			case 'Financials':
+			case 'Customer':
 				switch(methodName) {
-					case 'CalculateTotalSpend':
-						var totalSpend = parseFloat(retVal.transformedArguments['totalSpend']);
-						totalSpend += 4.2;
-						retVal.transformedArguments['totalSpend'] = totalSpend.toString();
+					case 'GetById':
+						switch(position) {
+							case 0:
+								var customerName = retVal.transformedArguments['name'];
+								customerName = 'Custom-' + customerName;
+								retVal.transformedArguments['name'] = customerName;
+								break;
+								
+							case 1:
+								var customerName = retVal.transformedArguments['name'];
+								customerName = customerName + '-Custom';
+								retVal.transformedArguments['name'] = customerName;
+								break;
+								
+							default:
+								var err = 'Unregistered customization called for position ' + position;
+								console.log(err);
+								retVal.success = false;
+								retVal.returnValue = -1;
+								retVal.returnString = err;
+								retVal.continueProcessing = false;
+								break;
+						}
+						break;
+					default:
+						var err = 'Unregistered customization called for method ' + methodName;
+						console.log(err);
+						retVal.success = false;
+						retVal.returnValue = -1;
+						retVal.returnString = err;
+						retVal.continueProcessing = false;
 						break;
 				}
 				break;
