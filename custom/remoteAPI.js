@@ -17,9 +17,7 @@ app.configure(function() {
 
 console.log('Ready to process...');
 
-app.post('/api/custom/:tenantId/:moduleName/:methodName/:position', function(req, res) {
-
-    console.log('req.body.length = ' + req.body.length);
+app.post('/api/custom/:host/:port/:tenantId/:moduleName/:methodName/:position', function(req, res) {
 
 	// Make sure that body data was passed in with the request...
     if (Object.keys(req.body).length == 0) {
@@ -38,19 +36,6 @@ app.post('/api/custom/:tenantId/:moduleName/:methodName/:position', function(req
       return;
     }
 
-	 console.log('API call for tenant ' + req.params.tenantId + ' module ' + req.params.moduleName + ' with method ' + req.params.methodName + ' at position ' + req.params.position + ' was made.');
-	 console.log('req.body.arguments = %j', req.body.arguments);
-
-	 // Prepare the payload for Thrift
-	 var thriftPayload = new TDACustomPayload();
-	 thriftPayload.numberOfArguments = req.body.numberOfArguments;
-	 thriftPayload.arguments = {};
-	 for(var i=0 ; i<req.body.arguments.length ; i++) {
-       thriftPayload.arguments[req.body.arguments[i].attribute] = req.body.arguments[i].value.toString();
-	 }
-	 console.log('thriftPayload = %j', thriftPayload);
-	 console.log('thriftPayload.arguments = %j', thriftPayload.arguments);
-
 	// Connect to redis
 	redisClient = redis.createClient();
 	redisClient.on('error', function(err) {
@@ -62,11 +47,18 @@ app.post('/api/custom/:tenantId/:moduleName/:methodName/:position', function(req
 
 	// See if the method is registered by checking Redis...
 	var key = req.params.tenantId + '|' + req.params.moduleName  + '|' + req.params.methodName + '|' + req.params.position;
-	console.log('searching redis for key ' + key);
 	redisClient.get(key, function(err, reply) {
 		if (reply) {
+			 // Prepare the payload for Thrift
+			 var thriftPayload = new TDACustomPayload();
+			 thriftPayload.numberOfArguments = req.body.numberOfArguments;
+			 thriftPayload.arguments = {};
+			 for(var i=0 ; i<req.body.arguments.length ; i++) {
+		       thriftPayload.arguments[req.body.arguments[i].attribute] = req.body.arguments[i].value.toString();
+			 }
+
 			// Call the thrift server
-			var thriftConnection = thrift.createConnection('localhost', 8081, {transport: ttransport.TBufferedTransport});
+			var thriftConnection = thrift.createConnection(req.params.host, req.params.port, {transport: ttransport.TBufferedTransport});
 			var thriftClient = thrift.createClient(TDACustomService, thriftConnection);
 			thriftConnection.on('error', function(err) {
 			  console.error('Thrift error: ' + err);
@@ -83,43 +75,22 @@ app.post('/api/custom/:tenantId/:moduleName/:methodName/:position', function(req
 			  } else {
 				if (typeof response === 'undefined')
 				{
-		            // Data was not found.  Return appropriate HTTP error code.
+		            // No response data.  Return appropriate HTTP error code.
 		            console.log('data not found ' + req.params.id);
 		            res.json(null, 404);
 		            res.end();
 				} else if (null == response) {
-		            // Data was not found.  Return appropriate HTTP error code.
+		            // No response data.  Return appropriate HTTP error code.
 		            console.log('data not found ' + req.params.id);
 		            res.json(null, 404);
 		            res.end();
 				} else {
-					// Data found.  Return result.
+					// Return response data.
 					var url_parts = url.parse(req.url, true);
 					var query = url_parts.query;
 
-					console.log('response from thrift call: %j', response);
-
-					// There is a method override registered
-					var retVal = new TDACustomResult();
-					retVal.success = true;
-					retVal.returnValue = 0;
-					retVal.returnString = "OK";
-					retVal.continueProcessing = true;
-					retVal.numberOfArguments = response.numberOfArguments;
-				 	retVal.arguments = {};
-				    console.log('From thrift, response.transformedArguments = %j', response.transformedArguments);
-				
-					var argNames = Object.getOwnPropertyNames(response.transformedArguments);
-					for (var i=0 ; i<argNames.length; i++) {
-						retVal.arguments[argNames[i]] = response.transformedArguments[argNames[i]];
-					}
-			
-					var url_parts = url.parse(req.url, true);
-					var query = url_parts.query;
-
-					var finalResponse = JSON.stringify(retVal);
+					var finalResponse = JSON.stringify(response);
 					finalResponse = query.callback + '(' + finalResponse + ');';
-					console.log('finalResponse: ' + finalResponse)
 					redisClient.quit();
 					thriftConnection.end();
 					res.end(finalResponse);
