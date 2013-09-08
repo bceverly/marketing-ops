@@ -86,11 +86,11 @@ app.post('/api/custom/:host/:port/:tenantId/:moduleName/:methodName/:position', 
 		            res.end();
 				} else {
 					// Return response data.
-					var url_parts = url.parse(req.url, true);
-					var query = url_parts.query;
+//					var url_parts = url.parse(req.url, true);
+//					var query = url_parts.query;
 
 					var finalResponse = JSON.stringify(response);
-					finalResponse = query.callback + '(' + finalResponse + ');';
+//					finalResponse = query.callback + '(' + finalResponse + ');';
 					redisClient.quit();
 					thriftConnection.end();
 					res.end(finalResponse);

@@ -1,6 +1,8 @@
+var http = require('http');
 var express = require('express');
 var pg = require('pg');
 var url = require('url');
+var redis = require('redis');
 var thrift = require('thrift');
 var ttransport = require('thrift/lib/thrift/transport');
 var service = require('../ThriftBridgeServer/gen-nodejs/ProductService');
@@ -70,6 +72,10 @@ app.get('/api/product/:id', function(req, res) {
 });
 
 app.get('/api/customer/:id', function(req,res) {
+  // Insert position 0 (top of method) customization shim
+  // End of position 0 (top of method) customization shim
+	
+  // Body of uncustomized method
   console.log('API call for customer lookup by ID made.');
   var client = new pg.Client(conString);
   client.connect(function(err) {
@@ -90,11 +96,61 @@ app.get('/api/customer/:id', function(req,res) {
         } else {
           // Query was successful.  Did we find the customer?
           if (result.rows.length > 0) {
-            // Customer found.  Return result.
+			var retVal = result.rows[0];
+			
+			// Insert position 1 (end of method) customization shim
+		    // Connect to redis
+		    redisClient = redis.createClient();
+		    redisClient.on('error', function(err) {
+		      console.log('Redis error: ' + err);
+		      res.send(500, err);
+		      redisClient.quit();
+		      res.end();
+		    });
+
+		    // See if the method is registered by checking Redis...
+		    var key = req.params.tenantId + '|' + req.params.moduleName  + '|' + req.params.methodName + '|' + req.params.position;
+		    redisClient.get(key, function(err, reply) {
+		      if (reply) {
+			    // A customization has been registered, make the call
+			    var jsonPayload = JSON.stringify({
+				  "numberOfArguments": 3,
+				  "arguments": [
+				    {"attribute": "id", "value": retVal.id.toString()},
+				    {"attribute": "name", "value": retVal.name.toString()},
+				    {"attribute": "notes", "value": retVal.notes.toString()}
+				  ]
+			    });
+			    var postHeaders = {
+				  'Content-Type': 'application/json',
+				  'Content-Length': Buffer.byteLength(jsonPayload, 'utf8');
+			    };
+			    var postOptions = {
+				  host: 'localhost',
+				  port: '8080',
+				  path: '/api/custom/localhost/8081/1/Customer/GetById/1',
+				  method: 'POST',
+				  headers: postHeaders
+			    };
+			    var reqPost = http.request(postOptions, function(res) {
+				  res.on('data', function(d) {
+					// Overwrite the data to be returned
+					retVal.id = d.transformedArguments['id'];
+					retVal.name = d.transformedArguments['name'];
+					retVal.notes = d.transformedArguments['notes'];
+				  });
+			    });
+			    req.Post.write(jsonPayload);
+			    req.Post.end();
+		      }
+		    });
+			// End of position 1 (end of method) customization shim
+			
+            // Return result.
             var url_parts = url.parse(req.url, true);
             var query = url_parts.query;
 
-            var response = JSON.stringify(result.rows[0]);
+            var response = JSON.stringify(retVal);
             response = query.callback + '(' + response + ');';
             console.log('response = ' + response);
             res.end(response);
