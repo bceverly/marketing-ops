@@ -17,6 +17,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web.vm.network :forwarded_port, guest: 80, host: 3280
     web.vm.network :private_network, ip: "192.168.56.100"
 
+#    web.vm.provider "virtualbox" do |v|
+#      v.gui = true
+#    end
+
     web.vm.provision :shell, :path => "provision_scripts/provision_web.sh"
   end
 
@@ -28,6 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     db.vm.network :private_network, ip: "192.168.56.101"
 
     db.vm.provider "virtualbox" do |v|
+#      v.gui = true
       v.customize ["modifyvm", :id, "--memory", 1024]
     end
 
@@ -41,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     win.vm.network :private_network, ip: "192.168.56.129"
 
     win.vm.provider "virtualbox" do |v|
-      v.gui = true
+#      v.gui = true
       v.customize "pre-boot",
         ["sharedfolder", "add", :id,
          "--name", "Vagrant", "--hostpath", "/Users/bceverly/marketing-ops/WinNet"
