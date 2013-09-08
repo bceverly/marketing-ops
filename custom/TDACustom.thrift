@@ -16,5 +16,9 @@ struct TDACustomResult
 
 service TDACustom
 {
-  TDACustomResult PerformCallout(1: TDACustomPayload data);
+  TDACustomResult PerformCallout(1: string tenantId, 
+                                 2: string moduleName, 
+                                 3: string methodName, 
+                                 4: i32 position, 
+                                 5: TDACustomPayload arguments);
 }

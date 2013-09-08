@@ -9,10 +9,26 @@ var ttypes = require('./TDACustom_types');
 //HELPER FUNCTIONS AND STRUCTURES
 
 TDACustom_PerformCallout_args = function(args) {
-  this.data = null;
+  this.tenantId = null;
+  this.moduleName = null;
+  this.methodName = null;
+  this.position = null;
+  this.arguments = null;
   if (args) {
-    if (args.data !== undefined) {
-      this.data = args.data;
+    if (args.tenantId !== undefined) {
+      this.tenantId = args.tenantId;
+    }
+    if (args.moduleName !== undefined) {
+      this.moduleName = args.moduleName;
+    }
+    if (args.methodName !== undefined) {
+      this.methodName = args.methodName;
+    }
+    if (args.position !== undefined) {
+      this.position = args.position;
+    }
+    if (args.arguments !== undefined) {
+      this.arguments = args.arguments;
     }
   }
 };
@@ -31,16 +47,41 @@ TDACustom_PerformCallout_args.prototype.read = function(input) {
     switch (fid)
     {
       case 1:
-      if (ftype == Thrift.Type.STRUCT) {
-        this.data = new ttypes.TDACustomPayload();
-        this.data.read(input);
+      if (ftype == Thrift.Type.STRING) {
+        this.tenantId = input.readString();
       } else {
         input.skip(ftype);
       }
       break;
-      case 0:
+      case 2:
+      if (ftype == Thrift.Type.STRING) {
+        this.moduleName = input.readString();
+      } else {
         input.skip(ftype);
-        break;
+      }
+      break;
+      case 3:
+      if (ftype == Thrift.Type.STRING) {
+        this.methodName = input.readString();
+      } else {
+        input.skip(ftype);
+      }
+      break;
+      case 4:
+      if (ftype == Thrift.Type.I32) {
+        this.position = input.readI32();
+      } else {
+        input.skip(ftype);
+      }
+      break;
+      case 5:
+      if (ftype == Thrift.Type.STRUCT) {
+        this.arguments = new ttypes.TDACustomPayload();
+        this.arguments.read(input);
+      } else {
+        input.skip(ftype);
+      }
+      break;
       default:
         input.skip(ftype);
     }
@@ -52,9 +93,29 @@ TDACustom_PerformCallout_args.prototype.read = function(input) {
 
 TDACustom_PerformCallout_args.prototype.write = function(output) {
   output.writeStructBegin('TDACustom_PerformCallout_args');
-  if (this.data !== null && this.data !== undefined) {
-    output.writeFieldBegin('data', Thrift.Type.STRUCT, 1);
-    this.data.write(output);
+  if (this.tenantId !== null && this.tenantId !== undefined) {
+    output.writeFieldBegin('tenantId', Thrift.Type.STRING, 1);
+    output.writeString(this.tenantId);
+    output.writeFieldEnd();
+  }
+  if (this.moduleName !== null && this.moduleName !== undefined) {
+    output.writeFieldBegin('moduleName', Thrift.Type.STRING, 2);
+    output.writeString(this.moduleName);
+    output.writeFieldEnd();
+  }
+  if (this.methodName !== null && this.methodName !== undefined) {
+    output.writeFieldBegin('methodName', Thrift.Type.STRING, 3);
+    output.writeString(this.methodName);
+    output.writeFieldEnd();
+  }
+  if (this.position !== null && this.position !== undefined) {
+    output.writeFieldBegin('position', Thrift.Type.I32, 4);
+    output.writeI32(this.position);
+    output.writeFieldEnd();
+  }
+  if (this.arguments !== null && this.arguments !== undefined) {
+    output.writeFieldBegin('arguments', Thrift.Type.STRUCT, 5);
+    this.arguments.write(output);
     output.writeFieldEnd();
   }
   output.writeFieldStop();
@@ -123,17 +184,21 @@ TDACustomClient = exports.Client = function(output, pClass) {
     this._reqs = {};
 };
 TDACustomClient.prototype = {};
-TDACustomClient.prototype.PerformCallout = function(data, callback) {
+TDACustomClient.prototype.PerformCallout = function(tenantId, moduleName, methodName, position, arguments, callback) {
   this.seqid += 1;
   this._reqs[this.seqid] = callback;
-  this.send_PerformCallout(data);
+  this.send_PerformCallout(tenantId, moduleName, methodName, position, arguments);
 };
 
-TDACustomClient.prototype.send_PerformCallout = function(data) {
+TDACustomClient.prototype.send_PerformCallout = function(tenantId, moduleName, methodName, position, arguments) {
   var output = new this.pClass(this.output);
   output.writeMessageBegin('PerformCallout', Thrift.MessageType.CALL, this.seqid);
   var args = new TDACustom_PerformCallout_args();
-  args.data = data;
+  args.tenantId = tenantId;
+  args.moduleName = moduleName;
+  args.methodName = methodName;
+  args.position = position;
+  args.arguments = arguments;
   args.write(output);
   output.writeMessageEnd();
   return this.output.flush();
@@ -179,7 +244,7 @@ TDACustomProcessor.prototype.process_PerformCallout = function(seqid, input, out
   var args = new TDACustom_PerformCallout_args();
   args.read(input);
   input.readMessageEnd();
-  this._handler.PerformCallout(args.data, function (err, result) {
+  this._handler.PerformCallout(args.tenantId, args.moduleName, args.methodName, args.position, args.arguments, function (err, result) {
     var result = new TDACustom_PerformCallout_result((err != null ? err : {success: result}));
     output.writeMessageBegin("PerformCallout", Thrift.MessageType.REPLY, seqid);
     result.write(output);
