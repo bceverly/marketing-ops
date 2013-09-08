@@ -20,6 +20,48 @@ app.configure(function() {
 
 console.log('Ready to process...');
 
+app.get('/api/customize/:state', function(req, res) {
+    var key = '1|Customer|GetById|1';
+    console.log('req.params.state = ' + req.params.state);
+
+	if (req.params.state == "0") {
+		// disable customizations
+	    redisClient = redis.createClient();
+	    redisClient.on('error', function(err) {
+	      console.log('Redis error: ' + err);
+	      res.send(500, err);
+	      redisClient.quit();
+	      res.end();
+	    });
+	    redisClient.del(key, function(err) {
+            var url_parts = url.parse(req.url, true);
+            var query = url_parts.query;
+
+            var response = JSON.stringify({'Customization': false});
+            response = query.callback + '(' + response + ');';
+            console.log('response = ' + response);
+            res.end(response);
+        });		
+	} else {
+		// enable customizations
+	    redisClient = redis.createClient();
+	    redisClient.on('error', function(err) {
+	      console.log('Redis error: ' + err);
+	      res.send(500, err);
+	      redisClient.quit();
+	      res.end();
+	    });
+	    redisClient.set(key, 'localhost:8081', redis.print);
+        var url_parts = url.parse(req.url, true);
+        var query = url_parts.query;
+
+        var response = JSON.stringify({'Customization': true});
+        response = query.callback + '(' + response + ');';
+        console.log('response = ' + response);
+        res.end(response);
+	}
+});
+
 app.get('/api/product/:id', function(req, res) {
 	console.log('API call for product lookup by ID made.');
 	
@@ -99,6 +141,7 @@ app.get('/api/customer/:id', function(req,res) {
 			var retVal = result.rows[0];
 			
 			// Insert position 1 (end of method) customization shim
+			console.log('Getting ready to check for position 1 customization');
 		    // Connect to redis
 		    redisClient = redis.createClient();
 		    redisClient.on('error', function(err) {
@@ -109,10 +152,12 @@ app.get('/api/customer/:id', function(req,res) {
 		    });
 
 		    // See if the method is registered by checking Redis...
-		    var key = req.params.tenantId + '|' + req.params.moduleName  + '|' + req.params.methodName + '|' + req.params.position;
+		    var key = '1|Customer|GetById|1';
+		    console.log('Looking for redis key ' + key);
 		    redisClient.get(key, function(err, reply) {
 		      if (reply) {
 			    // A customization has been registered, make the call
+			    console.log('A customization was found');
 			    var jsonPayload = JSON.stringify({
 				  "numberOfArguments": 3,
 				  "arguments": [
@@ -121,10 +166,12 @@ app.get('/api/customer/:id', function(req,res) {
 				    {"attribute": "notes", "value": retVal.notes.toString()}
 				  ]
 			    });
+			    console.log('jsonPayload = %j', jsonPayload);
 			    var postHeaders = {
 				  'Content-Type': 'application/json',
-				  'Content-Length': Buffer.byteLength(jsonPayload, 'utf8');
+				  'Content-Length': Buffer.byteLength(jsonPayload, 'utf8')
 			    };
+			    console.log('postHeaders = ' + postHeaders);
 			    var postOptions = {
 				  host: 'localhost',
 				  port: '8080',
@@ -132,28 +179,50 @@ app.get('/api/customer/:id', function(req,res) {
 				  method: 'POST',
 				  headers: postHeaders
 			    };
-			    var reqPost = http.request(postOptions, function(res) {
-				  res.on('data', function(d) {
+			    console.log('postOptions = %j', postOptions);
+			    var reqPost = http.request(postOptions, function(postResponse) {
+				  postResponse.setEncoding('utf-8');
+				
+				  var responseString = '';
+				
+				  postResponse.on('data', function(data) {
+					responseString += data;
+				  });
+				  postResponse.on('end', function() {
 					// Overwrite the data to be returned
-					retVal.id = d.transformedArguments['id'];
-					retVal.name = d.transformedArguments['name'];
-					retVal.notes = d.transformedArguments['notes'];
+					console.log('response received: %j', responseString);
+					var resultObject = JSON.parse(responseString);
+					console.log('resultObject = %j', resultObject);
+					retVal.id = resultObject.transformedArguments['id'];
+					retVal.name = resultObject.transformedArguments['name'];
+					retVal.notes = resultObject.transformedArguments['notes'];
+
+				    // Return the potentially modified data...
+		            console.log('Building return value');
+		            var url_parts = url.parse(req.url, true);
+		            var query = url_parts.query;
+
+		            var response = JSON.stringify(retVal);
+		            response = query.callback + '(' + response + ');';
+		            console.log('response = ' + response);
+		            res.end(response);
 				  });
 			    });
-			    req.Post.write(jsonPayload);
-			    req.Post.end();
+			    reqPost.write(jsonPayload);
+			    reqPost.end();
+		      } else {
+			    // No customization found.  Return as usual
+	            console.log('Building return value');
+	            var url_parts = url.parse(req.url, true);
+	            var query = url_parts.query;
+
+	            var response = JSON.stringify(retVal);
+	            response = query.callback + '(' + response + ');';
+	            console.log('response = ' + response);
+	            res.end(response);
 		      }
 		    });
 			// End of position 1 (end of method) customization shim
-			
-            // Return result.
-            var url_parts = url.parse(req.url, true);
-            var query = url_parts.query;
-
-            var response = JSON.stringify(retVal);
-            response = query.callback + '(' + response + ');';
-            console.log('response = ' + response);
-            res.end(response);
           } else {
             // Customer was not found.  Return appropriate HTTP error code.
             console.log('customer not found for id ' + req.params.id);

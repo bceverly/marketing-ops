@@ -13,6 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web.vm.synced_folder "www/", "/srv/website"
     web.vm.synced_folder "api/", "/srv/api"
     web.vm.synced_folder "ThriftBridgeServer/", "/srv/ThriftBridgeServer"
+    web.vm.synced_folder "custom/", "/srv/custom"
     web.vm.network :forwarded_port, guest: 80, host: 3280
     web.vm.network :private_network, ip: "192.168.56.100"
 
