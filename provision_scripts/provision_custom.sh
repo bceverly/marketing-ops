@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCKFILE=/tmp/provision_api
+LOCKFILE=/tmp/provision_custom
 
 if [ -f ${LOCKFILE} ];
 then
@@ -13,9 +13,6 @@ echo '192.168.56.102 win win.local' >> /etc/hosts
 echo '192.168.56.103 api api.local' >> /etc/hosts
 echo '192.168.56.104 custom custom.local' >> /etc/hosts
 
-sudo forever start -a /srv/api/mainRestServer.js
-sudo forever start -a /srv/custom/customizationRestServer.js
-
-sudo apt-get --quiet -y install redis-server > /dev/null
+sudo forever start -a /srv/custom/CustomizationServer.js
 
 touch ${LOCKFILE}

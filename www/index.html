@@ -19,7 +19,7 @@
 <td width="25%"><div id='nodeNativeResults'><p>Results of call to route /api/customer/1:</p></div></td>
 <td width="25%"><div id='nodeThriftResults'><p>Results of call to route /api/product/1:</p></div></td>
 <td width="25%"><div id='enableCustomizationResults'><p>&nbsp;</p></div></td>
-<td width="25%"><div id='disableCustomizationResults'><p>Customizations are disabled.  The Node Native results should not include a "-customer" suffix on the name returned.</p></div></td>
+<td width="25%"><div id='disableCustomizationResults'><p>Customizations are disabled.  The Node Native results should not include a "-Custom" suffix on the name returned.</p></div></td>
 </tr>
 </table>
 <p>Logical Diagram of Servers:</p>
@@ -34,7 +34,7 @@
       cache: false,
       timeout: 5000,
       success: function(data) {
-		$('#enableCustomizationResults').html('Customization Enabled.  You should see "-custom" added to the name of the customer returned on the Node Native test.')
+		$('#enableCustomizationResults').html('Customization Enabled.  You should see "-Custom" added to the name of the customer returned on the Node Native test.')
 		$('#disableCustomizationResults').html('&nbsp;');
       },
       error: function(jqXHR, textStatus, errorThrown) {
@@ -53,7 +53,7 @@
       timeout: 5000,
       success: function(data) {
 		$('#enableCustomizationResults').html('&nbsp;')
-		$('#disableCustomizationResults').html('Customizations are disabled.  The Node Native results should not include a "-customer" suffix on the name returned.');
+		$('#disableCustomizationResults').html('Customizations are disabled.  The Node Native results should not include a "-Custom" suffix on the name returned.');
       },
       error: function(jqXHR, textStatus, errorThrown) {
 		$('#enableCustomizationResults').html('&nbsp;')

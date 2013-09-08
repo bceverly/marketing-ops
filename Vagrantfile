@@ -11,33 +11,29 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
     web.vm.hostname = "web.local"
     web.vm.synced_folder "www/", "/srv/website"
-#    web.vm.synced_folder "api/", "/srv/api"
-#    web.vm.synced_folder "ThriftBridgeServer/", "/srv/ThriftBridgeServer"
-#    web.vm.synced_folder "custom/", "/srv/custom"
     web.vm.network :forwarded_port, guest: 80, host: 3280
     web.vm.network :private_network, ip: "192.168.56.100"
-
-#    web.vm.provider "virtualbox" do |v|
-#      v.gui = true
-#    end
-
     web.vm.provision :shell, :path => "provision_scripts/provision_web.sh"
   end
 
   config.vm.define :api do |api|
     api.vm.box = "wheezy64"
     api.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
-    api.vm.hostname = "web.local"
+    api.vm.hostname = "api.local"
     api.vm.synced_folder "api/", "/srv/api"
-    api.vm.synced_folder "ThriftBridgeServer/", "/srv/ThriftBridgeServer"
     api.vm.synced_folder "custom/", "/srv/custom"
+    api.vm.synced_folder "ThriftBridgeServer/", "/srv/ThriftBridgeServer"
     api.vm.network :private_network, ip: "192.168.56.103"
+    api.vm.provision :shell, :path => "provision_scripts/provision_api.sh"
+  end
 
-	#    api.vm.provider "virtualbox" do |v|
-	#      v.gui = true
-	#    end
-
-	    api.vm.provision :shell, :path => "provision_scripts/provision_api.sh"
+  config.vm.define :custom do |custom|
+    custom.vm.box = "wheezy64"
+    custom.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
+    custom.vm.hostname = "custom.local"
+    custom.vm.synced_folder "custom/", "/srv/custom"
+    custom.vm.network :private_network, ip: "192.168.56.104"
+    custom.vm.provision :shell, :path => "provision_scripts/provision_custom.sh"
   end
 
   config.vm.define :db do |db|
@@ -48,7 +44,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     db.vm.network :private_network, ip: "192.168.56.101"
 
     db.vm.provider "virtualbox" do |v|
-#      v.gui = true
       v.customize ["modifyvm", :id, "--memory", 1024]
     end
 

@@ -65,7 +65,7 @@ app.get('/api/customize/:state', function(req, res) {
 app.get('/api/product/:id', function(req, res) {
 	console.log('API call for product lookup by ID made.');
 	
-	var connection = thrift.createConnection('192.168.56.102', 9090, {transport: ttransport.TBufferedTransport});
+	var connection = thrift.createConnection('win.local', 9090, {transport: ttransport.TBufferedTransport});
 	var client = thrift.createClient(service, connection);
 	
 	connection.on('error', function(err) {
@@ -175,7 +175,7 @@ app.get('/api/customer/:id', function(req,res) {
 			    var postOptions = {
 				  host: 'localhost',
 				  port: '8080',
-				  path: '/api/custom/localhost/8081/1/Customer/GetById/1',
+				  path: '/api/custom/custom.local/8081/1/Customer/GetById/1',
 				  method: 'POST',
 				  headers: postHeaders
 			    };

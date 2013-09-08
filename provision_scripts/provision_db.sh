@@ -7,7 +7,10 @@ then
 fi
 
 echo '192.168.56.100 web web.local' >> /etc/hosts
+echo '192.168.56.101 db db.local' >> /etc/hosts
+echo '192.168.56.102 win win.local' >> /etc/hosts
 echo '192.168.56.103 api api.local' >> /etc/hosts
+echo '192.168.56.104 custom custom.local' >> /etc/hosts
 
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main" >> /etc/apt/sources.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
