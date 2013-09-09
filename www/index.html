@@ -1,107 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Marketing Operations</title>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<title>Marketing Operations</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
 <body>
-<p>Welcome to the Marketing Operations proof of concept prototype.</p>
-<p>Press one of the following buttons to test elements of the architecture:</p>
-<table border='1'>
-<tr>
-<td width="25%"><input type='button' id='nodeNative' value='Node Native' /></td>
-<td width="25%"><input type='button' id='nodeThrift' value='Node Thrift' /></td>
-<td width="25%"><input type='button' id='enableCustomization' value='Enable Customization' /></td>
-<td width="25%"><input type='button' id='disableCustomization' value='Disable Customization' /></td>
-</tr>
-<tr>
-<td width="25%"><div id='nodeNativeResults'><p>Results of call to route /api/customer/1:</p></div></td>
-<td width="25%"><div id='nodeThriftResults'><p>Results of call to route /api/product/1:</p></div></td>
-<td width="25%"><div id='enableCustomizationResults'><p>&nbsp;</p></div></td>
-<td width="25%"><div id='disableCustomizationResults'><p>Customizations are disabled.  The Node Native results should not include a "-Custom" suffix on the name returned.</p></div></td>
-</tr>
-</table>
-<p>Logical Diagram of Servers:</p>
-<img src='/img/LogicalDiagram.png' />
+	<table width='100%'>
+		<tr>
+			<td align='center'><h1>Welcome to the Marketing Operations proof of concept prototype.</h1></td>
+		</tr>
+	</table>
 
-<script type='text/javascript'>
-  $('#enableCustomization').click(function() {
-    $('#enableCustomizationResults').html('Toggling...');
-    $.ajax({
-      url: 'http://192.168.56.103:3456/api/customize/1',
-      dataType: 'jsonp',
-      cache: false,
-      timeout: 5000,
-      success: function(data) {
-		$('#enableCustomizationResults').html('Customization Enabled.  You should see "-Custom" added to the name of the customer returned on the Node Native test.')
-		$('#disableCustomizationResults').html('&nbsp;');
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-		$('#enableCustomizationResults').html('Error attempting to enable customization.')
-		$('#disableCustomizationResults').html('&nbsp;');
-      }
-    });
-  });
+	<h2>Press one of the following buttons to test elements of the architecture:</h2>
 
-  $('#disableCustomization').click(function() {
-    $('#disableCustomizationResults').html('Toggling...');
-    $.ajax({
-      url: 'http://192.168.56.103:3456/api/customize/0',
-      dataType: 'jsonp',
-      cache: false,
-      timeout: 5000,
-      success: function(data) {
-		$('#enableCustomizationResults').html('&nbsp;')
-		$('#disableCustomizationResults').html('Customizations are disabled.  The Node Native results should not include a "-Custom" suffix on the name returned.');
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-		$('#enableCustomizationResults').html('&nbsp;')
-		$('#disableCustomizationResults').html('Error attempting to disable customization.');
-      }
-    });
-  });
+	<table border="1" cellpadding="5">
+		<tr>
+			<td width="25%"><input type='button' id='nodeNative' value='Node Native' /></td>
+			<td width="25%"><input type='button' id='nodeThrift' value='Node Thrift' /></td>
+			<td width="25%"><input type='button' id='enableCustomization' value='Enable Business Logic Customization' /></td>
+			<td width="25%"><input type='button' id='disableCustomization' value='Disable Business Logic Customization' /></td>
+		</tr>
+		<tr>
+			<td width="25%"><div id='nodeNativeResults'><p>Results of call:</p></div></td>
+			<td width="25%"><div id='nodeThriftResults'><p>Results of call:</p></div></td>
+			<td width="25%"><div id='enableCustomizationResults'><p>&nbsp;</p></div></td>
+			<td width="25%"><div id='disableCustomizationResults'><p>Business logic customizations are disabled.  The Node Native results should not include a "-Custom" suffix on the name returned.</p></div></td>
+		</tr>
+	</table>
+	<br />
+	<h2>Logical Diagram of Servers:</h2>
+	<table width='100%'>
+		<tr>
+			<td align='center'><img src='/img/LogicalDiagram.png' /></td>
+		</tr>
+	</table>
 
-  $('#nodeNative').click(function() {
-    $('#nodeNativeResults').html('Testing...');
-    $.ajax({
-      url: 'http://192.168.56.103:3456/api/customer/1',
-      dataType: 'jsonp',
-      cache: false,
-      timeout: 5000,
-      success: function(data) {
-        var results = '<p>Results of call to route /api/customer/1:<br />';
-        results += '&nbsp;&nbsp;id = ' + data.id + '<br />';
-        results += '&nbsp;&nbsp;Name = ' + data.name + '<br />';
-        results += '&nbsp;&nbsp;Notes = ' + data.notes + '</p>';
-        $('#nodeNativeResults').html(results);
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        $('#nodeNativeResults').html('Error calling NodeNative REST route...');
-      }
-    });
-  });
-
-  $('#nodeThrift').click(function() {
-    $('#nodeThriftResults').html('Testing...');
-    $.ajax({
-      url: 'http://192.168.56.103:3456/api/product/1',
-      dataType: 'jsonp',
-      cache: false,
-      timeout: 5000,
-      success: function(data) {
-        var results = '<p>Results of call to route /api/product/1:<br />';
-        results += '&nbsp;&nbsp;id = ' + data.id + '<br />';
-        results += '&nbsp;&nbsp;Name = ' + data.name + '<br />';
-        results += '&nbsp;&nbsp;Notes = ' + data.notes + '</p>';
-        $('#nodeThriftResults').html(results);
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        $('#nodeThriftResults').html('Error calling NodeThrift REST route...');
-      }
-    });
-  });
-</script>
+	<script src="/js/index.js"></script>
 </body>
-
 </html>
