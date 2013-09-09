@@ -31,6 +31,4 @@ sudo echo '</VirtualHost>' >> ${DEFAULT_SITE}
 
 sudo apachectl restart
 
-#sudo apt-get --quiet -y install redis-server > /dev/null
-
 touch ${LOCKFILE}
