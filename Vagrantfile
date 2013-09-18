@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :web do |web|
     web.vm.box = "wheezy64"
-    web.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
+    web.vm.box_url = "http://pgdevsvr28.genesis.aprimo.com/wheezy64.box"
     web.vm.hostname = "web.local"
     web.vm.synced_folder "www/", "/srv/website"
     web.vm.network :forwarded_port, guest: 80, host: 3280
@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :api do |api|
     api.vm.box = "wheezy64"
-    api.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
+    api.vm.box_url = "http://pgdevsvr28.genesis.aprimo.com/wheezy64.box"
     api.vm.hostname = "api.local"
     api.vm.synced_folder "api/", "/srv/api"
     api.vm.synced_folder "custom/", "/srv/custom"
@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :custom do |custom|
     custom.vm.box = "wheezy64"
-    custom.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
+    custom.vm.box_url = "http://pgdevsvr28.genesis.aprimo.com/wheezy64.box"
     custom.vm.hostname = "custom.local"
     custom.vm.synced_folder "custom/", "/srv/custom"
     custom.vm.network :private_network, ip: "192.168.56.104"
@@ -38,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :db do |db|
     db.vm.box = "wheezy64"
-    db.vm.box_url = "https://www.dropbox.com/s/l0ed9qeozsxvymf/wheezy64.box"
+    db.vm.box_url = "http://pgdevsvr28.genesis.aprimo.com/wheezy64.box"
     db.vm.hostname = "db.local"
     db.vm.synced_folder "db/", "/srv/db"
     db.vm.network :private_network, ip: "192.168.56.101"
@@ -52,7 +52,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :win do |win|
     win.vm.box = "winserv2008r2"
-#    win.vm.box_url = ""
+    win.vm.box_url = "http://pgdevsvr28.genesis.aprimo.com/winserv2008r2.box"
     win.vm.hostname = "win.local"
     win.vm.network :private_network, ip: "192.168.56.129"
 
